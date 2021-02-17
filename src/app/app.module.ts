@@ -1,18 +1,41 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { MaterialModule } from './material/material.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { AdminComponent } from './admin/admin.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StudentFormComponent } from './admin/student-form/student-form.component';
+import { AdminServiceService } from './shared/admin-service.service';
+import { ApiRequestService } from './shared/api-request.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { StudentListComponent } from './admin/student-list/student-list.component';
+import { StudentListEditComponent } from './admin/student-list-edit/student-list-edit.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AdminComponent,
+    StudentFormComponent,
+    StudentListComponent,
+    StudentListEditComponent,
+
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    HttpClientModule,
+    ToastrModule.forRoot(),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [AdminServiceService, ApiRequestService],
+  bootstrap: [AppComponent],
+  entryComponents: [StudentFormComponent,StudentListEditComponent],
 })
 export class AppModule { }
