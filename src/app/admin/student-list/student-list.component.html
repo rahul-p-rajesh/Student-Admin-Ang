@@ -1,5 +1,8 @@
 <div class="search-div">
-  <button mat-raised-button (click)="OnCreate()">
+  <button mat-raised-button color="primary" (click)="OnLogout()">
+    <mat-icon>dangerous</mat-icon> logout
+  </button>
+  <button mat-raised-button color="primary" (click)="OnCreate()">
     <mat-icon>add</mat-icon>Create
   </button>
   <mat-form-field class="search-form-field">
@@ -8,6 +11,7 @@
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>
+
 </div>
 
 <div class="mat-elevation-z8">

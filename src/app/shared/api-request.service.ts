@@ -4,12 +4,18 @@ import { Form } from '@angular/forms';
 import { AdminServiceService } from './admin-service.service';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { LoginService } from './login.service';
+import { Router } from '@angular/router';
+
 @Injectable({
   providedIn: 'root'
 })
 export class ApiRequestService {
 
-  constructor(private adminService: AdminServiceService, private http: HttpClient) { }
+  constructor(private adminService: AdminServiceService, private loginService: LoginService,
+    private http: HttpClient,
+    private router: Router,
+  ) { }
   readonly BaseURI = 'http://localhost:5000/api/';
 
   registerStudent() {
@@ -29,7 +35,6 @@ export class ApiRequestService {
 
   getAllStudent() {
     return this.http.get(this.BaseURI + 'admin/');
-
   }
 
   EditStudent() {
@@ -49,4 +54,25 @@ export class ApiRequestService {
     return this.http.delete(this.BaseURI + 'admin/' + id)
   }
 
+  //login
+  Login() {
+    var body = {
+      "userName": this.loginService.LoginForm.value.UserName,
+      "password": this.loginService.LoginForm.value.password,
+    }
+    return this.http.post(this.BaseURI + 'login/loginuser', body);
+  }
+
+  redirectData = {
+    userName: '',
+  };
+  //student 
+  getStudentByUserName(userName) {
+    return this.http.get(this.BaseURI + 'student/' + userName);
+  }
+
+  logout() {
+    this.redirectData.userName = "";
+    this.router.navigate(["/user/login"]);
+  }
 }

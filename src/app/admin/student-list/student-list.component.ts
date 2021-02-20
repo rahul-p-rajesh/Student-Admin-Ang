@@ -62,6 +62,9 @@ export class StudentListComponent implements OnInit {
     this.listData.filter = this.searchKey.trim().toLowerCase();
   }
 
+  OnLogout() {
+    this.apiService.logout();
+  }
   OnCreate() {
     this.service.initializeFormGroup();
     const dialogConfig = new MatDialogConfig();
@@ -69,6 +72,7 @@ export class StudentListComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.width = "60%";
     this.dialog.open(StudentFormComponent, dialogConfig)
+    this.refreshList();
   }
 
   onEdit(row) {

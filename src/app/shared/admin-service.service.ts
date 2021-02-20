@@ -38,7 +38,7 @@ export class AdminServiceService {
       firstName: new FormControl('', Validators.required),
       lastName: new FormControl('', Validators.required),
       email: new FormControl('', Validators.email),
-      phoneNumber: new FormControl('', Validators.minLength(10)),
+      phoneNumber: new FormControl('', [Validators.minLength(10), Validators.maxLength(10)]),
       gender: new FormControl(''),
     }
   )

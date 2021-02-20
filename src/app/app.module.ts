@@ -14,6 +14,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { StudentListComponent } from './admin/student-list/student-list.component';
 import { StudentListEditComponent } from './admin/student-list-edit/student-list-edit.component';
+import { UserComponent } from './user/user.component';
+import { LoginComponent } from './user/login/login.component';
+import { StudentComponent } from './student/student.component';
+import { StudentEditFormComponent } from './student/student-edit-form/student-edit-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +25,11 @@ import { StudentListEditComponent } from './admin/student-list-edit/student-list
     StudentFormComponent,
     StudentListComponent,
     StudentListEditComponent,
+    UserComponent,
+    LoginComponent,
+    StudentComponent,
+    StudentEditFormComponent,
+    
 
 
   ],

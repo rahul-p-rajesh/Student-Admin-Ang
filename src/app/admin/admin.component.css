@@ -2,9 +2,25 @@ div.container {
   margin: 0px 40px;
 }
 
+.title-container {
+  height: 100px;
+  padding-top: 20px;
+  margin-bottom: 30px;
+}
+.title {
+  width: 50%;
+  text-align: center;
+  margin-left: 25%;
+  height: 60px;
+  padding-top: 20px;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+}
+
 .fill-remaining-space {
-  /* This fills the remaining space, by using flexbox. 
-     Every toolbar row uses a flexbox row layout. */
   flex: 1 1 auto;
 }
 
@@ -56,14 +72,21 @@ mat-footer-row mat-footer-cell {
 
 /* filter controls */
 .search-div {
-  margin: 10px;
+  margin-bottom: 5px;
+  height: 50px;
+}
+.search-div > * {
+  margin-right: 10px;
 }
 .search-form-field {
   width: 60%;
   margin-left: 10px;
-  padding: 5px 10px;
-  background-color: #f5f5f5;
-  border-radius: 5px;
+  padding: 2px 10px;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
   height: 40px;
 }
 /* .search-form-field div.mat-form-field-underline {
@@ -84,4 +107,11 @@ mat-footer-row mat-footer-cell {
 }
 .inline-form-controls > * {
   width: 100%;
+}
+mat-table {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 10px;
 }
